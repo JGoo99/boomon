@@ -33,3 +33,7 @@ lerna-debug.log*
 # 📌 logs (Nest.js API 서버만 해당)
 apps/api/logs/
 apps/api/logs/*.log
+
+# Web 관련 (NextJS)
+apps/web/.next/
+apps/web/node_modules/
