@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { AppController } from './controllers/app.controller';
 import { AppService } from './app.service';
 import { SoundpageModule } from './modules/soundpage/soundpage.module';
 import { CommonModule } from './common/common.module';

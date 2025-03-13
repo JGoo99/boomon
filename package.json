@@ -16,6 +16,7 @@
     "apps/*"
   ],
   "dependencies": {
+    "@nestjs/swagger": "^11.0.6",
     "concurrently": "^9.1.2"
   }
 }
