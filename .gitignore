@@ -1,0 +1,35 @@
+# 📌 Node.js 관련 (공통)
+node_modules/
+package-lock.json
+yarn.lock
+.pnpm/
+.pnpm.js
+
+# 📌 빌드 결과물 (공통)
+dist/
+.next/
+out/
+
+# 📌 환경 변수 파일 (보안 중요)
+.env
+.env.local
+.env.*.local
+
+# 📌 IDE 및 OS 관련 파일 (불필요한 파일 제외)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 📌 TypeScript 빌드 결과물
+*.tsbuildinfo
+
+# 📌 logs (Nest.js API 서버만 해당)
+apps/api/logs/
+apps/api/logs/*.log
