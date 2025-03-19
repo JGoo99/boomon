@@ -1,5 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { HealthCheckService, HealthCheck, HttpHealthIndicator } from '@nestjs/terminus';
+import {
+  HealthCheckService,
+  HealthCheck,
+  HttpHealthIndicator,
+} from '@nestjs/terminus';
 
 @Controller('health')
 export class HealthController {

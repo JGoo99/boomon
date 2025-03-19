@@ -4,6 +4,6 @@ import { SoundpageService } from './services/soundpage.service';
 
 @Module({
   controllers: [SoundpageController],
-  providers: [SoundpageService]
+  providers: [SoundpageService],
 })
 export class SoundpageModule {}

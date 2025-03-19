@@ -5,6 +5,7 @@
   "packageManager": "npm@10.9.0",
   "scripts": {
     "build": "turbo run build",
+    "vercel-build": "turbo run build --filter=web...",
     "dev": "turbo run dev --parallel",
     "dev:api": "cd apps/api && npm run dev",
     "dev:web": "cd apps/web && npm run dev",
@@ -20,9 +21,13 @@
   ],
   "dependencies": {
     "@nestjs/swagger": "^11.0.6",
-    "concurrently": "^9.1.2"
+    "@nestjs/terminus": "^11.0.0",
+    "concurrently": "^9.1.2",
+    "next": "^15.2.3",
+    "styled-jsx": "^5.1.6"
   },
   "devDependencies": {
-    "turbo": "^2.4.4"
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
   }
 }
