@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SoundpageController } from '../src/modules/soundpage/controllers/soundpage.controller';
+import { SoundpageController } from '../src/modules/soundpage/soundpage.controller';
 
 describe('SoundpageController', () => {
   let controller: SoundpageController;

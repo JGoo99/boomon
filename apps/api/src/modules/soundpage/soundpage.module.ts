@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
-import { SoundpageController } from './controllers/soundpage.controller';
-import { SoundpageService } from './services/soundpage.service';
+import { SoundpageController } from './soundpage.controller';
+import { SoundpageService } from './soundpage.service';
+import { CommonModule } from '../../common/common.module';
 
 @Module({
+  imports: [CommonModule],
   controllers: [SoundpageController],
   providers: [SoundpageService],
 })
