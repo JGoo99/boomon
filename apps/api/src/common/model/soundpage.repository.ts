@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel, Model } from 'nestjs-dynamoose';
-import { Soundpage, SoundpageKey } from '../entities/soundpage.interface';
+import { Soundpage, SoundpageKey } from './soundpage.interface';
 
 @Injectable()
 export class SoundpageRepository {

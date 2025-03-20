@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Soundpage } from '../entities/soundpage.interface';
-import { SoundpageRepository } from '../repository/soundpage.repository';
+import { Soundpage } from '../../common/model/soundpage.interface';
+import { SoundpageRepository } from '../../common/model/soundpage.repository';
 
 @Injectable()
 export class SoundpageService {

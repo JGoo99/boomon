@@ -1,19 +1,11 @@
 import { Module } from '@nestjs/common';
-import { SoundpageController } from './controllers/soundpage.controller';
-import { SoundpageService } from './services/soundpage.service';
-import { DynamooseModule } from 'nestjs-dynamoose';
-import { SoundpageSchema } from './entities/soundpage.schema';
+import { SoundpageController } from './soundpage.controller';
+import { SoundpageService } from './soundpage.service';
 import { CommonModule } from '../../common/common.module';
-import { SoundpageRepository } from './repository/soundpage.repository';
 
 @Module({
-  imports: [
-    CommonModule,
-    DynamooseModule.forFeature([
-      { name: 'Soundpage', schema: SoundpageSchema },
-    ]),
-  ],
+  imports: [CommonModule],
   controllers: [SoundpageController],
-  providers: [SoundpageService, SoundpageRepository],
+  providers: [SoundpageService],
 })
 export class SoundpageModule {}
