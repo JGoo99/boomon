@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { SoundpageService } from './soundpage.service';
+import { SoundpageService } from '../src/modules/soundpage/services/soundpage.service';
 
 describe('SoundpageService', () => {
   let service: SoundpageService;

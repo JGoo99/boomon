@@ -37,3 +37,6 @@ apps/api/logs/*.log
 # Web 관련 (NextJS)
 apps/web/.next/
 apps/web/node_modules/
+
+.vercel
+.turbo

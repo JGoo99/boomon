@@ -1,26 +1,35 @@
 {
-  "name": "boomon",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
-    "dev:api": "cd apps/api && npm run start",
-    "dev:web": "cd apps/web && npm run dev"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "private": true,
-  "workspaces": [
-    "apps/*"
-  ],
-  "dependencies": {
-    "@nestjs/swagger": "^11.0.6",
-    "concurrently": "^9.1.2"
-  },
-  "devDependencies": {
-    "eslint": "^9.22.0",
-    "prettier": "^3.5.3"
-  }
+    "name": "boomon",
+    "version": "1.0.0",
+    "main": "index.js",
+    "packageManager": "npm@10.9.0",
+    "scripts": {
+        "build": "turbo run build",
+        "vercel-build": "turbo run build --filter=web...",
+        "dev": "turbo run dev --parallel",
+        "dev:api": "cd apps/api && npm run dev",
+        "dev:web": "cd apps/web && npm run dev",
+        "lint": "turbo run lint"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "dependencies": {
+        "@nestjs/swagger": "^11.0.6",
+        "@nestjs/terminus": "^11.0.0",
+        "concurrently": "^9.1.2",
+        "next": "^15.2.3",
+        "styled-jsx": "^5.1.6"
+    },
+    "devDependencies": {
+        "turbo": "^2.4.4",
+        "typescript": "^5.8.2",
+        "eslint": "^9.22.0",
+        "prettier": "^3.5.3"
+    }
 }
