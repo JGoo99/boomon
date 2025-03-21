@@ -1,8 +1,12 @@
 export interface SoundpageKey {
-  id: string;
+  pk: string;
+  sk: string;
 }
 
 export interface Soundpage extends SoundpageKey {
-  name: string;
-  originalAudioUrl?: string;
+  soundpageName?: string;
+  originalS3AudioUrl?: string;
+  // bookmark
+  bookmarkContent?: string;
+  bookmarkTime?: number;
 }
