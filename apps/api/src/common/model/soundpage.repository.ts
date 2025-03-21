@@ -26,6 +26,21 @@ export class SoundpageRepository {
     return await this.soundpageModel.query({ pk: `s#${id}` }).exec();
   }
 
+  async updateSoundpage(soundpageId: string, soundpageDto: SoundpageDto) {
+    await this.soundpageModel.update({
+      pk: `s#${soundpageId}`,
+      sk: `s#${soundpageId}`,
+      soundpageName: soundpageDto.name,
+    });
+  }
+
+  async removeSoundpage(soundpageId: string) {
+    await this.soundpageModel.delete({
+      pk: `s#${soundpageId}`,
+      sk: `s#${soundpageId}`,
+    });
+  }
+
   async saveBookmark(bookmarkDto: BookmarkDto): Promise<string> {
     const bookmarkId = uuid();
     await this.soundpageModel.create({

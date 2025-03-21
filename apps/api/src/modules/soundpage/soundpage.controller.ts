@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 import { SoundpageService } from './soundpage.service';
 import { SoundpageDto } from './dto/soundpage.dto';
 
@@ -14,5 +22,18 @@ export class SoundpageController {
   @Get(':id')
   async get(@Param('id') id: string) {
     return await this.soundpageService.get(id);
+  }
+
+  @Put(':id')
+  async update(
+    @Param('id') soundpageId: string,
+    @Body() soundpageDto: SoundpageDto,
+  ) {
+    await this.soundpageService.update(soundpageId, soundpageDto);
+  }
+
+  @Delete(':id')
+  async remove(@Param('id') soundpageId: string) {
+    await this.soundpageService.remove(soundpageId);
   }
 }
