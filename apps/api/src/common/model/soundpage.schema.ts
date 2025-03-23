@@ -1,16 +1,29 @@
 import { Schema } from 'dynamoose';
-import { v1 as uuid } from 'uuid';
 
-export const SoundpageSchema = new Schema({
-  id: {
-    type: String,
-    hashKey: true,
-    default: uuid(),
+export const SoundpageSchema = new Schema(
+  {
+    pk: {
+      type: String,
+      hashKey: true,
+    },
+    sk: {
+      type: String,
+      rangeKey: true,
+    },
+    soundpageName: {
+      type: String,
+    },
+    originalS3AudioUrl: {
+      type: String,
+    },
+    bookmarkContent: {
+      type: String,
+    },
+    bookmarkTime: {
+      type: Number,
+    },
   },
-  name: {
-    type: String,
+  {
+    timestamps: true,
   },
-  originalAudioUrl: {
-    type: String,
-  },
-});
+);
