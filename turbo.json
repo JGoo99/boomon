@@ -14,6 +14,7 @@
       "test": {
         "outputs": ["coverage/**"]
       }
-    }
+    },
+    "globalEnv": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KE", "AWS_REGION", "CLOUDFRONT_URL"]
 }
   
