@@ -40,3 +40,4 @@ apps/web/node_modules/
 
 .vercel
 .turbo
+.env
