@@ -4,7 +4,8 @@ import {
   ExceptionFilter,
   HttpException,
 } from '@nestjs/common';
-import { Response } from 'express';
+import { Request, Response } from 'express';
+import { formatErrorResponse } from '../utils/response-formater.util';
 
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -13,30 +14,8 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();
 
-    const statusCode = exception.getStatus();
-    const errorResponse = exception.getResponse() as
-      | string
-      | { error: string; message: string | string[]; statusCode: number };
-
-    let message: string | string[];
-    if (typeof errorResponse === 'string') {
-      message = errorResponse;
-    } else if (
-      typeof errorResponse === 'object' &&
-      'message' in errorResponse
-    ) {
-      message = errorResponse.message;
-    } else {
-      message = 'An unexpected error occurred';
-    }
-
-    response.status(statusCode).json({
-      success: false,
-      statusCode,
-      message,
-      timeStamp: new Date().toISOString(),
-      path: request.url,
-      method: request.method,
-    });
+    response
+      .status(exception.getStatus())
+      .json(formatErrorResponse(exception, request));
   }
 }
