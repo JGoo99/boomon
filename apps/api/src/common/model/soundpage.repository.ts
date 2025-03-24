@@ -17,7 +17,7 @@ export class SoundpageRepository {
     await this.soundpageModel.create({
       pk: `s#${soundpageId}`,
       sk: `s#${soundpageId}`,
-      soundpageName: soundpageDto.name,
+      ...soundpageDto,
     });
     return soundpageId;
   }
@@ -30,7 +30,7 @@ export class SoundpageRepository {
     await this.soundpageModel.update({
       pk: `s#${soundpageId}`,
       sk: `s#${soundpageId}`,
-      soundpageName: soundpageDto.name,
+      ...soundpageDto,
     });
   }
 
