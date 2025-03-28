@@ -15,9 +15,9 @@ export class SoundpageRepository {
   async saveSoundpage(soundpageDto: SoundpageDto): Promise<string> {
     const soundpageId = uuid();
     await this.soundpageModel.create({
-      pk: `s#${soundpageId}`,
-      sk: `s#${soundpageId}`,
-      soundpageName: soundpageDto.name,
+      pk: `p#${soundpageId}`,
+      sk: `p#${soundpageId}`,
+      ...soundpageDto,
     });
     return soundpageId;
   }
@@ -28,23 +28,23 @@ export class SoundpageRepository {
 
   async updateSoundpage(soundpageId: string, soundpageDto: SoundpageDto) {
     await this.soundpageModel.update({
-      pk: `s#${soundpageId}`,
-      sk: `s#${soundpageId}`,
-      soundpageName: soundpageDto.name,
+      pk: `p#${soundpageId}`,
+      sk: `p#${soundpageId}`,
+      ...soundpageDto,
     });
   }
 
   async removeSoundpage(soundpageId: string) {
     await this.soundpageModel.delete({
-      pk: `s#${soundpageId}`,
-      sk: `s#${soundpageId}`,
+      pk: `p#${soundpageId}`,
+      sk: `p#${soundpageId}`,
     });
   }
 
   async saveBookmark(bookmarkDto: BookmarkDto): Promise<string> {
     const bookmarkId = uuid();
     await this.soundpageModel.create({
-      pk: `s#${bookmarkDto.soundpageId}`,
+      pk: `p#${bookmarkDto.soundpageId}`,
       sk: `b#${bookmarkId}`,
       bookmarkContent: bookmarkDto.content,
       bookmarkTime: bookmarkDto.time,
@@ -54,14 +54,14 @@ export class SoundpageRepository {
 
   async getBookmark(soundpageId: string, bookmarkId: string) {
     return await this.soundpageModel.get({
-      pk: `s#${soundpageId}`,
+      pk: `p#${soundpageId}`,
       sk: `b#${bookmarkId}`,
     });
   }
 
   async updateBookmark(bookmarkId: string, bookmarkDto: BookmarkDto) {
     await this.soundpageModel.update({
-      pk: `s#${bookmarkDto.soundpageId}`,
+      pk: `p#${bookmarkDto.soundpageId}`,
       sk: `b#${bookmarkId}`,
       bookmarkContent: bookmarkDto.content,
       bookmarkTime: bookmarkDto.time,
@@ -70,7 +70,7 @@ export class SoundpageRepository {
 
   async removeBookmark(soundpageId: string, bookmarkId: string) {
     await this.soundpageModel.delete({
-      pk: `s#${soundpageId}`,
+      pk: `p#${soundpageId}`,
       sk: `b#${bookmarkId}`,
     });
   }
