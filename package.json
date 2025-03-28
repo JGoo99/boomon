@@ -20,16 +20,20 @@
         "packages/*"
     ],
     "dependencies": {
-        "@nestjs/swagger": "^11.0.6",
+        "@nestjs/platform-express": "^11.0.12",
+        "@nestjs/swagger": "^11.0.7",
         "@nestjs/terminus": "^11.0.0",
+        "@vercel/node": "^5.1.14",
         "concurrently": "^9.1.2",
+        "express": "^5.0.1",
         "next": "^15.2.3",
-        "styled-jsx": "^5.1.6"
+        "styled-jsx": "^5.1.6",
+        "swagger-ui-express": "^5.0.1"
     },
     "devDependencies": {
-        "turbo": "^2.4.4",
-        "typescript": "^5.8.2",
         "eslint": "^9.22.0",
-        "prettier": "^3.5.3"
+        "prettier": "^3.5.3",
+        "turbo": "^2.4.4",
+        "typescript": "^5.8.2"
     }
 }
