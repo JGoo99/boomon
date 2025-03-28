@@ -1,13 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ExpressAdapter } from '@nestjs/platform-express';
-import * as express from 'express';
+import { SuccessResponseInterceptor } from './common/interceptors/success-response-interceptor';
+import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 
-const server = express();
 let isInitialized = false;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, new ExpressAdapter(server));
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalFilters(new HttpExceptionFilter());
+  app.useGlobalInterceptors(new SuccessResponseInterceptor());
 
   await app.init();
   isInitialized = true;
