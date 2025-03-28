@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import * as express from 'express';
+import express from 'express';
 import { SuccessResponseInterceptor } from './common/interceptors/success-response-interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { ExpressAdapter } from '@nestjs/platform-express';
