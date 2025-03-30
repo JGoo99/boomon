@@ -22,5 +22,10 @@ export default async function handler(req: any, res: any) {
   if (!isInitialized) {
     await bootstrap();
   }
+
+  if (req.url.startsWith('/api')) {
+    req.url = req.url.replace(/^\/api/, '') || '/';
+  }  
+
   return server(req, res);
 }
